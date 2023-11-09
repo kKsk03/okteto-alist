@@ -5,6 +5,8 @@ services:
       - "5244:5244"
     volumes:
       - alist-data:/opt/alist/data
+    labels:
+      dev.okteto.com/auto-ingress: "domain"
 volumes:
   alist-data:
     driver_opts:
