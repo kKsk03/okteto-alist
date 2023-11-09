@@ -1,0 +1,11 @@
+services:
+  alist:
+    image: xhofe/alist:latest
+    ports:
+      - "5244:5244"
+    volumes:
+      - alist-data:/opt/alist/data
+volumes:
+  alist-data:
+    driver_opts:
+      size: 3Gi
