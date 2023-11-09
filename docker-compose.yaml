@@ -8,4 +8,4 @@ services:
 volumes:
   alist-data:
     driver_opts:
-      size: 3Gi
+      size: 1Gi
