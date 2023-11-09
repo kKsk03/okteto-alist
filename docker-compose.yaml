@@ -5,8 +5,11 @@ services:
       - "5244:5244"
     volumes:
       - alist-data:/opt/alist/data
-    labels:
-      dev.okteto.com/auto-ingress: "domain"
+  cloudflare:
+        image: cloudflare/cloudflared:latest
+        environment:
+            - CF_TOKEN=${CF_TOKEN}   
+        entrypoint: cloudflared tunnel --no-autoupdate run --token ${CF_TOKEN}
 volumes:
   alist-data:
     driver_opts:
